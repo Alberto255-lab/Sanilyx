@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1A3A5C">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Sanilyx">
+<title>Sanilyx — Gestione sanitaria personale</title>
+<!-- Il caricamento animato compare solo al primo avvio della sessione: se è già stato mostrato lo nascondiamo subito -->
+<script>try{if(sessionStorage.getItem('sanilyx_loaded'))document.documentElement.classList.add('no-loader')}catch(e){}</script>
+<link rel="stylesheet" href="sanilyx-web.css">
+</head>
+<body>
+
+<!-- ============ SCHERMATA DI CARICAMENTO (solo CSS: nessuna libreria) ============ -->
+<div id="loader">
+  <div class="ld-logo"><img data-logo alt="Sanilyx"></div>
+  <div class="ld-bar"><i></i></div>
+  <div class="ld-txt"><span>Inizializzazione database…</span><span>Caricamento terapie…</span><span>Preparazione assistente…</span><span>Quasi pronto…</span></div>
+</div>
+
+<!-- ============ ACCESSO ============ -->
+<div id="auth" hidden>
+  <section class="auth-hero">
+    <div class="logo-tile"><img data-logo alt=""></div>
+    <h1>La tua salute,<br>sempre sotto controllo.</h1>
+    <p>Scansiona le prescrizioni, ricevi un promemoria per ogni dose e consulta lo storico delle tue terapie.</p>
+    <ul id="punti"></ul>
+  </section>
+  <section class="auth-form" id="auth-form"></section>
+</div>
+
+<!-- ============ APPLICAZIONE ============ -->
+<div id="app" hidden>
+  <header class="top">
+    <div class="brand"><img data-logo alt=""><span>Sani<em>lyx</em></span><small>Gestione sanitaria personale</small></div>
+    <div class="user"><button class="btn teal sm btn-install" data-installa>⬇ Scarica l'app</button><span data-lang-sel></span><span id="h-stato"></span><div class="avatar" id="h-av"></div><b id="h-nome"></b></div>
+  </header>
+  <aside id="nav"></aside>
+  <main id="main"><div class="wrap" id="contenuto"></div></main>
+</div>
+<div id="toasts"></div>
+
+<!-- Librerie da CDN: sql.js (SQLite in WebAssembly) e jsPDF (PDF per il medico) -->
+<script src="https://cdn.jsdelivr.net/npm/sql.js@1.10.3/dist/sql-wasm.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<!-- Logica dell'applicazione -->
+<script src="sanilyx-web.js"></script>
+</body>
+</html>
