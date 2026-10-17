@@ -10,7 +10,7 @@
    ================================================================ */
 
 /* ---------- CONFIGURAZIONE ---------- */
-const GEMINI_API_KEY = 'AQ.Ab8RN6Jm75sP6N3EtvSWAY55zv3WLIIXD8RhEJjNEveDWgdx1A';   // obbligatoria, es. "AIza..."  (https://aistudio.google.com)
+const GEMINI_API_KEY = 'AQ.Ab8RN6IKD5u-r-a9RuNPMro6qYSbfmFXt5WW8_1ttN2npBs4ig';   // obbligatoria, es. "AIza..."  (https://aistudio.google.com)
 const GEMINI_MODEL = 'gemini-3.5-flash-lite';           // modello usato (elenco: https://ai.google.dev/gemini-api/docs/models)
 /* ------------------------------------ */
 // Risposta d'errore nello stesso formato di Gemini ({ error: { message } }),
